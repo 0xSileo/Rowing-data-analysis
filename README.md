@@ -1,4 +1,4 @@
-# Rowing-data-analysis
+# Rowing data analysis
 
 ## Français
 ### Notes
