@@ -16,6 +16,7 @@ Il est intuitif de se dire que pour des distances courtes, le rameur pourra teni
 $$
 p_2 = p_1 + 5\log_2\frac{d_2}{d_1} 
 $$
+
 où $p_1$ est le rythme que le rameur a tenu sur la distance $d_1$. Si l'on veut tenter de prédire $p_2$, le rythme que le rameur tiendra sur une distance $d_2$, nous pouvons appliquer la formule. Il est possible d'effectuer une régression sur les données si l'on connait les temps pour 500m $(p_1,p_2,p_3\dots p_n)$ d'un rameur sur différentes distances $(d_1,d_2,d_3\dots d_n)$.  La loi de Paul prenant généralement le rythme pour 2000m comme repère, il est possible de connaître la valeur de $p_{2000m}$ qui permettra de tracer la courbe de Paul en appliquant la méthode des moindres carrés. 
 
 ```r
