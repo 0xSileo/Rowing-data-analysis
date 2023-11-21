@@ -20,20 +20,38 @@ $$
 où $p_1$ est le rythme que le rameur a tenu sur la distance $d_1$. Si l'on veut tenter de prédire $p_2$, le rythme que le rameur tiendra sur une distance $d_2$, nous pouvons appliquer la formule. Il est possible d'effectuer une régression sur les données si l'on connait les temps pour 500m $(p_1,p_2,p_3\dots p_n)$ d'un rameur sur différentes distances $(d_1,d_2,d_3\dots d_n)$.  La loi de Paul prenant généralement le rythme pour 2000m comme repère, il est possible de connaître la valeur de $p_{2000m}$ qui permettra de tracer la courbe de Paul en appliquant la méthode des moindres carrés. 
 
 ```r
+# Exemple de données
+distances <- c(500,1000,1500,2000,5000)
+times <- c(112, 231, 370, 497, 1342)
+
+paces <- 500*times/distances
+
 # Linéarisation des données (par rapport à 2000 m)
 dist_transformed <- 5 * log2(distances/2000)
 
 # Régression linéaire
-model <- lm(pace ~ dist_transformed)
+model <- lm(paces ~ dist_transformed)
+
+summary(model)
 ```
 
 Le modèle nous donne donc l'expression de la courbe de Paul, ajustée aux données du rameur. Cela nous permet de prévoir le rythme à tenir pour faire une distance choisie.
 
 ```r
-# Prédictions pour 5, 10 et 21 km. 
-predict(model, newdata = data.frame(dist_transformed=c(5000,10000,21000)))
+# Prédictions pour 3, 10 et 21 km. 
+predict(model, newdata = data.frame(dist_transformed=c(3000,10000,21000)))
 ```
 
 ### Graphique pace - SPM
 
 Afin de perfectionner un entraînement, il est utile de visualiser les performances déjà réalisées, en créant un graphique qui met le temps pour 500m en relation avec le SPM moyen.
+
+```r
+distances <- c(500,1000,1500,2000,5000)
+times <- c(112, 231, 370, 497, 1342)
+SPMs <- c(27,26,24,20,19)
+
+paces <- 500*times/distances
+
+plot(SPMs,paces)
+```
