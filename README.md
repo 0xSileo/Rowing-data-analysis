@@ -3,7 +3,7 @@
 ## Français
 ### Notes
 
-J'emloierai ici le mot "rameur" pour désigner l'individu, et non l'appareil.
+J'emploierai ici le mot "rameur" pour désigner l'individu, et non l'appareil.
 
 ### Données du rameur
 
