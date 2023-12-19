@@ -5,7 +5,9 @@ library(scales) # For breaks_width()
 library(ggthemes) # Load additional ggplot themes
 library(ggpmisc) # To display equation on plot
 
-ROWER_NAME <- "Rower Name"
+source("private.r")
+ROWER_NAME <- identity$name
+
 IGNORED_DISTANCES = c()
 
 format_seconds <- function(x) {

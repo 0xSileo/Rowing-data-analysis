@@ -5,7 +5,7 @@ LOGIN_URL <- "https://log.concept2.com/login"
 EXPORT_URL <- "https://log.concept2.com/season/2024/export"
 
 # Load credentials using source
-source("password.R")
+source("private.r")
 username <- credentials$username
 password <- credentials$password
 
