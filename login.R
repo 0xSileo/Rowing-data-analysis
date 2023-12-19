@@ -28,7 +28,7 @@ if (http_status(login_response)$category == "Success") {
   
   # Extract Laravel cookie
   laravel_cookie <- cookies(login_response)$value
-  export_response <- GET(export_url, set_cookies("laravel_cookie" = laravel_cookie))
+  export_response <- GET(EXPORT_URL, set_cookies("laravel_cookie" = laravel_cookie))
   
   if (http_status(export_response)$category == "Success") {
     writeBin(content(export_response, "raw"), "Concept2-data/concept2-season-2024.csv")
